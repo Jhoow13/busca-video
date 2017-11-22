@@ -1,5 +1,5 @@
 (function() {
     'use strict';
-    angular.module('buscaVideos', ['ngRoute']);
+    angular.module('buscaVideo', ['ngRoute']);
 
 })();

@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    angular.module('appModelo').controller('inicioController',
+    angular.module('buscaVideo').controller('inicialController',
                ['$scope', '$location',
         function($scope,$location){
 

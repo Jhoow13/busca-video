@@ -1,7 +1,7 @@
 (function(){
     'use strict';
-    angular.module('appModelo')
-        .factory('infoHttpServices', ['$http', function ($http){
+    angular.module('buscaVideo')
+        .factory('searchHttpServices', ['$http', function ($http){
             var _defaultRequest = function(){
                 return $http({
                     method: 'GET',

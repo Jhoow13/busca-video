@@ -1,13 +1,13 @@
 (function(){
     'use strict';
 
-    angular.module('appModelo').config(['$routeProvider', '$locationProvider',
+    angular.module('buscaVideo').config(['$routeProvider', '$locationProvider',
              function($routeProvider, $locationProvider) {
 
             $routeProvider
             .when('/', {
-                templateUrl: 'app/views/inicio.html',
-                controller: 'inicioController'
+                templateUrl: 'app/views/inicial.html',
+                controller: 'inicialController'
             })
 
             .otherwise({redirectTo: '/'});
