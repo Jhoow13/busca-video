@@ -7,13 +7,32 @@
                 </div>
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
-            <div ng-repeat="item in searchResults">
+            <div ng-repeat="item in searchResults" >
                 <div>
                     <h4>{{item.snippet.title}}</h4>
-                    <img src="{{item.snippet.thumbnails.medium.url}}" alt="">
+                    <!-- <img src="{{item.snippet.thumbnails.medium.url}}" alt=""> -->
                     <hr>
                 </div>
             </div>
+            <nav ng-show="totalPages > 0">
+                <ul class="pagination">
+                    <li>
+                        <a ng-click="getPage(prevPage, 0)" ng-disabled="currentPage <= 1">
+                            <span>&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">
+                        <span ng-bind="currentPage"></span>
+                        <span>/</span>
+                        <span ng-bind="totalPages"></span>
+                    </a></li>
+                    <li>
+                        <a ng-click="getPage(nextPage, 1)" ng-disabled="currentPage == totalPages">
+                            <span>&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
