@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 
 var appFiles = {
     htmlfiles:[
-        'index.html', 
+        'index.html',
         './app/views/*.html',
         './app/**/*.html'
     ],
@@ -16,8 +16,8 @@ var appFiles = {
     jsFiles: [
         './app/*.js',
         './app/config/*.js',
-        './app/controllers/*.js',
-        './app/directives/**/**/*.js'       
+        './app/services/**/**/*.js',
+        './app/controllers/*.js'
     ]
 };
 
