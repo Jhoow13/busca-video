@@ -10,6 +10,11 @@
                 controller: 'inicialController'
             })
 
+            .when('/details',{
+                templateUrl: 'app/views/details.html',
+                controller: 'detailsController'
+            })
+
             .otherwise({redirectTo: '/'});
 
 
