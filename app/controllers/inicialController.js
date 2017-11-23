@@ -29,5 +29,12 @@
 
                 });
             }
+
+            $scope.videoDetails = function(videoId){
+                searchHttpServices.videoDetailsRequest().then(function(response){
+
+                });
+            }
+
         }]);
 })();
