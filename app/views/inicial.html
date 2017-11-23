@@ -7,32 +7,43 @@
                 </div>
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
-            <div ng-repeat="item in searchResults" >
-                <div>
-                    <h4>{{item.snippet.title}}</h4>
-                    <!-- <img src="{{item.snippet.thumbnails.medium.url}}" alt=""> -->
-                    <hr>
+            <div class="col-md-6">
+                <div ng-repeat="item in searchResults">
+                    <div>
+                        <h4>{{item.titulo}}</h4>
+                        <button class="btn btn-default btn-block" ng-click="videoDetails(item.id)">{{item.id}}</button>
+                        <img src="{{item.thumbnail}}" alt="">
+                        <hr>
+                    </div>
+                </div>
+                <nav ng-show="totalPages > 0">
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="getPage(prevPage, 0)" ng-disabled="currentPage <= 1">
+                                <span>&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                            <span ng-bind="currentPage"></span>
+                            <span>/</span>
+                            <span ng-bind="totalPages"></span>
+                        </a></li>
+                        <li>
+                            <a ng-click="getPage(nextPage, 1)" ng-disabled="currentPage == totalPages">
+                                <span>&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">teste header</div>
+                    <div class="panel-body">
+                        <div ng-bind-html="details.embed"></div>
+                    </div>
                 </div>
             </div>
-            <nav ng-show="totalPages > 0">
-                <ul class="pagination">
-                    <li>
-                        <a ng-click="getPage(prevPage, 0)" ng-disabled="currentPage <= 1">
-                            <span>&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">
-                        <span ng-bind="currentPage"></span>
-                        <span>/</span>
-                        <span ng-bind="totalPages"></span>
-                    </a></li>
-                    <li>
-                        <a ng-click="getPage(nextPage, 1)" ng-disabled="currentPage == totalPages">
-                            <span>&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </div>
 </div>
