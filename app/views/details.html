@@ -1,15 +1,14 @@
-<div class="row">
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <button class="btn btn-link pull-left" ng-click="back()">Voltar</button>
-                <span ng-bind="details.titulo"></span>
-            </div>
-
-            <div class="panel-body">
-                <div ng-bind-html="details.embed"></div>
-            </div>
+<div layout="column" ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button ng-click="back()">Voltar</md-button>
+            <h2 class="md-flex" ng-bind="details.titulo"></h2>
         </div>
-    </div>
+    </md-toolbar>
 
+    <md-content flex layout-padding>
+        <div ng-bind-html="details.embed"></div>
+        <p ng-bind="details.descricao"></p>
+        <p ng-bind="details.views"></p>
+    </md-content>
 </div>

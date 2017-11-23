@@ -1,41 +1,22 @@
-<div class="container">
-    <div class="row">
-        <div class="row">
-            <form class="form-inline" ng-submit="search(search_field)">
-                <div class="form-group">
-                    <input class="form-control" type="text" id="txtSearch" ng-model="search_field" required>
-                </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>
-            <div class="col-md-6">
-                <div ng-repeat="item in searchResults">
-                    <div>
-                        <h4>{{item.titulo}}</h4>
-                        <button class="btn btn-default btn-block" ng-click="videoDetails(item.id)">{{item.id}}</button>
-                        <img src="{{item.thumbnail}}" alt="">
-                        <hr>
-                    </div>
-                </div>
-                <nav ng-show="totalPages > 0">
-                    <ul class="pagination">
-                        <li>
-                            <a ng-click="getPage(prevPage, 0)" ng-disabled="currentPage <= 1">
-                                <span>&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">
-                            <span ng-bind="currentPage"></span>
-                            <span>/</span>
-                            <span ng-bind="totalPages"></span>
-                        </a></li>
-                        <li>
-                            <a ng-click="getPage(nextPage, 1)" ng-disabled="currentPage == totalPages">
-                                <span>&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+<form layout="column" layout-align="space-between none" ng-submit="search(search_field)">
+    <md-input-container class="md-block">
+        <label>Pesquisa</label>
+        <input ng-model="search_field">
+    </md-input-container>
+    <md-button class="md-raised" type="submit">Buscar</md-button>
+</form>
+
+<div layout="row" ng-repeat="item in searchResults">
+    <md-card flex="30">
+        <img ng-src="{{item.thumbnail}}" class="md-card-image">
+        <md-card-content>
+            <h4>{{item.titulo}}</h4>
+            <p>
+                {{item.descricao}}
+            </p>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="start center">
+            <md-button ng-click="videoDetails(item.id)">Detalhes</md-button>
         </div>
-    </div>
+    </md-card>
 </div>
