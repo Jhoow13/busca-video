@@ -7,7 +7,7 @@
             var youtubeUrl = 'https://www.googleapis.com/youtube/v3/search';
             var youtubeVideoUrl = 'https://www.googleapis.com/youtube/v3/videos';
             var partParams = 'id,snippet';
-            var partVideoParams = 'snippet,statistics';
+            var partVideoParams = 'snippet,statistics,player';
 
             var _defaultRequest = function(search_field){
                 return $http({
@@ -17,7 +17,8 @@
                         key: KEY,
                         q: search_field,
                         part: partParams,
-                        maxResults: 10
+                        maxResults: 10,
+                        type: 'video'
                     }
                 });
             };
