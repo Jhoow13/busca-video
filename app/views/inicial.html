@@ -3,7 +3,7 @@
         <div class="row">
             <form class="form-inline" ng-submit="search(search_field)">
                 <div class="form-group">
-                    <input class="form-control" type="text" id="txtSearch" ng-model="search_field">
+                    <input class="form-control" type="text" id="txtSearch" ng-model="search_field" required>
                 </div>
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
@@ -35,14 +35,6 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">teste header</div>
-                    <div class="panel-body">
-                        <div ng-bind-html="details.embed"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
