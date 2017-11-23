@@ -32,7 +32,7 @@
                         q:search_field,
                         part: partParams,
                         pageToken: pageToken,
-                        maxResults: 10
+                        maxResults: 12
                     }
                 })
             }
