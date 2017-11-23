@@ -1,22 +1,41 @@
-<form layout="column" layout-align="space-between none" ng-submit="search(search_field)">
-    <md-input-container class="md-block">
-        <label>Pesquisa</label>
-        <input ng-model="search_field">
-    </md-input-container>
-    <md-button class="md-raised" type="submit">Buscar</md-button>
-</form>
+<md-toolbar>
+    <h2>
+        iCasei - Busca Video
+    </h2>
+</md-toolbar>
 
-<div layout="row" ng-repeat="item in searchResults">
-    <md-card flex="30">
-        <img ng-src="{{item.thumbnail}}" class="md-card-image">
-        <md-card-content>
-            <h4>{{item.titulo}}</h4>
-            <p>
-                {{item.descricao}}
-            </p>
-        </md-card-content>
-        <div class="md-actions" layout="row" layout-align="start center">
-            <md-button ng-click="videoDetails(item.id)">Detalhes</md-button>
-        </div>
-    </md-card>
+<div layout-margin>
+    <form layout="column" layout-align="space-between none" ng-submit="search(search_field)">
+        <md-input-container class="md-block">
+            <label>Pesquisa</label>
+            <input ng-model="search_field">
+        </md-input-container>
+        <md-button class="md-raised" type="submit">Buscar</md-button>
+        <md-button class="md-raised" ng-click="clear()">Clear</md-button>
+    </form>
+
+    <div layout="column" layout-gt-xs="row" layout-wrap layout-align="center center">
+        <md-card flex-gt-xs="30" ng-repeat="item in searchResults">
+            <img ng-src="{{item.thumbnail}}" class="md-card-image">
+            <md-card-content>
+                <h4>{{item.titulo}}</h4>
+                <p>
+                    {{item.descricao}}
+                </p>
+            </md-card-content>
+            <div class="md-actions" layout="row" layout-align="start center">
+                <md-button ng-click="videoDetails(item.id)">Detalhes</md-button>
+            </div>
+        </md-card>
+    </div>
+
+    <div layout="row" layout-align="center center" ng-show="totalPages > 0">
+        <md-button class="md-raised" ng-click="getPage(prevPage, 0)" ng-disabled="currentPage <= 1">&lt</md-button>
+        <md-button class="md-raised">
+            <span ng-bind="currentPage"></span>
+            <span>/</span>
+            <span ng-bind="totalPages"></span>
+        </md-button>
+        <md-button class="md-raised" ng-click="getPage(nextPage, 1)" ng-disabled="currentPage == totalPages">&gt</md-button>
+    </div>
 </div>

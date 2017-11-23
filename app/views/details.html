@@ -1,4 +1,4 @@
-<div layout="column" ng-cloak>
+<div layout="column">
     <md-toolbar>
         <div class="md-toolbar-tools">
             <md-button ng-click="back()">Voltar</md-button>
@@ -6,7 +6,7 @@
         </div>
     </md-toolbar>
 
-    <md-content flex layout-padding>
+    <md-content layout-margin>
         <div ng-bind-html="details.embed"></div>
         <p ng-bind="details.descricao"></p>
         <p ng-bind="details.views"></p>
