@@ -17,7 +17,7 @@
                         key: KEY,
                         q: search_field,
                         part: partParams,
-                        maxResults: 10,
+                        maxResults: 12,
                         type: 'video'
                     }
                 });

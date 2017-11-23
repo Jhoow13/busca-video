@@ -15,7 +15,7 @@
                 searchHttpServices.defaultRequest(search_field).then(function(response){
                     var pageInfo = response.data.pageInfo;
                     $scope.nextPage = response.data.nextPageToken
-                    $scope.totalPages = Math.ceil(pageInfo.totalResults/10);
+                    $scope.totalPages = Math.ceil(pageInfo.totalResults/12);
                     $scope.currentPage = 1;
                     $scope.searchResults = applicationModel.searchResultModel(response.data.items);
 
@@ -41,7 +41,11 @@
             $scope.videoDetails = function(videoId){
                 sessionStorage.setItem('videoId', videoId);
                 $location.path('/details');
+            }
 
+            $scope.clear = function(){
+                sessionStorage.clear();
+                location.reload();
             }
 
         }]);
