@@ -3,6 +3,7 @@ var browserSync = require('browser-sync').create();
 var jshint = require('gulp-jshint');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
+var less = require('gulp-less');
 
 var appFiles = {
     htmlfiles:[
@@ -11,7 +12,7 @@ var appFiles = {
         './app/**/*.html'
     ],
     cssFiles:[
-        './app/assets/*.css'
+        './app/assets/*.less'
     ],
     jsFiles: [
         './app/*.js',
@@ -39,12 +40,19 @@ gulp.task('js', function(){
     .pipe(gulp.dest('src/'));
 });
 
+gulp.task('less', function(){
+    return gulp.src(appFiles.cssFiles)
+    .pipe(less())
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('src/'));
+});
+
 gulp.task('reload', function(done){
     browserSync.reload();
     done();
 });
 
-gulp.task('serve', ['js'], function(){
+gulp.task('serve', ['less', 'js'], function(){
   browserSync.init({
     server: {
         baseDir: "./"
@@ -52,9 +60,9 @@ gulp.task('serve', ['js'], function(){
   });
 
    gulp.watch(appFiles.htmlfiles, ['reload']);
-   gulp.watch(appFiles.cssFiles, ['reload']);
+   gulp.watch(appFiles.cssFiles, ['less', 'reload']);
    gulp.watch(appFiles.jsFiles, ['js', 'reload']);
 
 });
 
-gulp.task('default',['jshint', 'serve']);
+gulp.task('default',['serve']);
