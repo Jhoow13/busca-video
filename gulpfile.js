@@ -16,7 +16,8 @@ var appFiles = {
     jsFiles: [
         './app/*.js',
         './app/config/*.js',
-        './app/services/**/**/*.js',
+        './app/services/**/*.js',
+        './app/models/**/*.js',
         './app/controllers/*.js'
     ]
 };
