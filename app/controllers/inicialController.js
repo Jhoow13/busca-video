@@ -23,6 +23,7 @@
                     sessionStorage.setItem('paginaAtual', $scope.currentPage);
                     sessionStorage.setItem('totalPaginas', Math.ceil(pageInfo.totalResults/10));
                     sessionStorage.setItem('termoPesquisa', search_field);
+                    $scope.search_submit = true;
                 });
             }
 
