@@ -1,3 +1,17 @@
+# Joel Silva
+## Busca Video
+
+- Teste realizado com HTML, LESS, angularJS.
+- GulpJS como Task Runner
+
+## Instruções para rodar o projeto
+
+- Abrir terminal
+- git clone https://github.com/jhoow13/teste-front-end.git
+- cd teste-front-end
+- gulp
+- acessar localhost:3000
+
 # Teste iCasei: Front-End Pleno
 Desenvolver uma aplicação HTML5
 
