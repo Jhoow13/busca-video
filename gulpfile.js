@@ -95,7 +95,6 @@ gulp.task('jsDependences-prod', function(){
 gulp.task('jsFiles-prod', function(){
     return gulp.src(appFiles.jsFiles)
     .pipe(concat('app.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('src/js/'));
 });
 
