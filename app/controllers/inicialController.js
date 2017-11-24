@@ -46,7 +46,10 @@
 
             $scope.clear = function(){
                 sessionStorage.clear();
-                location.reload();
+                $scope.searchResults = [];
+                $scope.currentPage = 0;
+                $scope.totalPages = 0;
+                $scope.search_submit = false;
             }
 
         }]);
