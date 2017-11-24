@@ -6,7 +6,7 @@
 
             $routeProvider
             .when('/', {
-                templateUrl: './src/html/inicial.html',
+                templateUrl: '/src/html/inicial.html',
                 controller: 'inicialController'
             })
 
