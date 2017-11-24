@@ -1,5 +1,5 @@
 (function() {
     'use strict';
-    angular.module('buscaVideo', ['ngRoute', 'ngSanitize', 'ngMaterial']);
+    angular.module('buscaVideo', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ngMessages']);
 
 })();

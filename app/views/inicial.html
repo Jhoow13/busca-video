@@ -6,13 +6,16 @@
     </md-toolbar>
 
     <div layout-margin>
-        <form layout="column" ng-submit="search(search_field)" ng-class="{'form-up': search_submit}">
+        <form name="searchForm" novalidate layout="column" ng-submit="searchForm.$valid && search(search_field)" ng-class="{'form-up': search_submit}">
             <md-input-container>
                 <label>Pesquisa</label>
-                <input ng-model="search_field" class="input-size">
+                <input name="search_field" ng-model="search_field" class="input-size" required>
+                <div ng-messages="searchForm.search_field.$error" ng-if='searchForm.search_field.$dirty'>
+                    <div ng-message="required">Campo obrigatório</div>
+                </div>
             </md-input-container>
-            <md-button class="md-raised" type="submit">Buscar</md-button>
-            <md-button class="md-raised" ng-click="clear()">Clear</md-button>
+            <md-button class="md-raised" type="submit" ng-disabled="searchForm.$invalid">Buscar</md-button>
+            <md-button class="md-raised" ng-click="clear()" ng-show="search_submit">limpar pesquisa</md-button>
         </form>
 
         <div layout="column" layout-gt-xs="row" layout-wrap layout-align="center center" class="lista">
