@@ -6,12 +6,12 @@
 
             $routeProvider
             .when('/', {
-                templateUrl: 'app/views/inicial.html',
+                templateUrl: './src/html/inicial.html',
                 controller: 'inicialController'
             })
 
             .when('/details',{
-                templateUrl: 'app/views/details.html',
+                templateUrl: '/src/html/details.html',
                 controller: 'detailsController'
             })
 
