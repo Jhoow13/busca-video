@@ -3,6 +3,7 @@
 
 - Teste realizado com HTML, LESS, angularJS.
 - GulpJS como Task Runner
+- Visualizar via gh-pages [aqui]([https://jhoow13.github.io/teste-front-end/#/)
 
 ## Instruções para rodar o projeto
 
