@@ -7,7 +7,7 @@ Uma simples busca de videos do youtube.
 - GulpJS como Task Runner
 - Utilizando algumas das diretrizes do [Google Material Design](https://www.google.com/design/spec/material-design/introduction.html)
 - Utilizando a [API de busca do YouTube](https://developers.google.com/youtube/v3/docs/search/list)
-- Visualizar via gh-pages [aqui](https://jhoow13.github.io/teste-front-end/#/)
+- Clique [aqui](https://jhoow13.github.io/busca-video/#/) para visualizar via gh-pages
 
 
 ## Instruções para rodar o projeto
