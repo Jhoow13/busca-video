@@ -13,7 +13,7 @@ Uma simples busca de videos do youtube.
 ## Instruções para rodar o projeto
 
 - Abrir terminal
-- git clone https://github.com/jhoow13/teste-front-end.git
-- cd teste-front-end
+- git clone https://github.com/Jhoow13/busca-video.git
+- cd busca-video
 - gulp
 - acessar localhost:3000
