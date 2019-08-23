@@ -3,7 +3,7 @@
     angular.module('buscaVideo')
         .factory('searchHttpServices', ['$http', function ($http){
 
-            var KEY = 'AIzaSyAZ7g-fZdfwaVZ7gsm0wjQY7vxcMgK999U';
+            var KEY = 'AIzaSyDU2tvapuqsf4zJ7HWBY2j1DT5WQgi4EMw';
             var youtubeUrl = 'https://www.googleapis.com/youtube/v3/search';
             var youtubeVideoUrl = 'https://www.googleapis.com/youtube/v3/videos';
             var partParams = 'id,snippet';
